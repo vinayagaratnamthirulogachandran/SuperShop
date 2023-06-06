@@ -15,5 +15,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 
+const category = require('./routes/categoryRoute');
+
+app.use('/api/v1', category);
+
 app.use(errorMiddleware);
 module.exports = app;
